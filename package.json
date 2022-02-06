@@ -8,11 +8,18 @@
     "start": "node .",
     "lint": "eslint ."
   },
-  "keywords": ["discord", "discord-bot", "discord-welcome-screen"],
+  "keywords": [
+    "discord",
+    "discord-bot",
+    "discord-welcome-screen"
+  ],
   "author": "felixoi (Felix Kleinekathöfer)",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^13.6.0"
+    "discord.js": "^13.6.0",
+    "pg": "^8.7.3",
+    "sequelize": "^6.15.1",
+    "sequelize-cli": "^6.4.1"
   },
   "devDependencies": {
     "eslint": "^8.8.0"

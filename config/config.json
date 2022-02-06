@@ -1,0 +1,19 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "localpw",
+    "database": "discord_welcome_screen_roles",
+    "host": "db",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "tomkadwill",
+    "password": "password",
+    "database": "discord_welcome_screen_roles",
+    "host": "localhost",
+    "dialect": "postgres",
+    "operatorsAliases": false,
+    "use_env_variable": "DATABASE_URL"
+  }
+}
