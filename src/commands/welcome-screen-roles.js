@@ -6,9 +6,11 @@ const {Collection} = require("discord.js");
 const subcommands = new Collection();
 const commandFiles = fs.readdirSync(path.join(__dirname, '/welcomescreenroles')).filter(file => file.endsWith('.js'));
 
+const name = 'welcome-screen-roles'
 const builder = new SlashCommandBuilder()
-    .setName('welcome-screen-roles')
+    .setName(name)
     .setDescription('Configure Welcome Screen Roles')
+    .setDefaultPermission(false)
 for (const file of commandFiles) {
     const subcommand = require(`./welcomescreenroles/${file}`);
     subcommands.set(subcommand.name, subcommand)
@@ -17,7 +19,9 @@ for (const file of commandFiles) {
 
 
 module.exports = {
+    name: name,
     data: builder,
+    userPermissions: ['MANAGE_GUILD'],
     async execute(interaction) {
         const command = subcommands.get(interaction.options.getSubcommand());
 
