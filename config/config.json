@@ -5,7 +5,7 @@
     "database": "discord_welcome_screen_roles",
     "host": "db",
     "dialect": "postgres",
-    "operatorsAliases": false
+    "operatorsAliases": 0
   },
   "production": {
     "username": "tomkadwill",
@@ -19,7 +19,7 @@
         "rejectUnauthorized": false
       }
     },
-    "operatorsAliases": false,
+    "operatorsAliases": 0,
     "use_env_variable": "DATABASE_URL"
   }
 }

@@ -6,6 +6,7 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: localpw
+      POSTGRES_DB: discord_welcome_screen_roles
   app:
     build: .
     restart: always

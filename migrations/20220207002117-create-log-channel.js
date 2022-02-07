@@ -1,16 +1,15 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('AutoRoles', {
+    await queryInterface.createTable('LogChannels', {
       guild: {
-        allowNull: false,
         type: Sequelize.STRING,
+        allowNull: false,
         primaryKey: true
       },
-      role: {
+      channel: {
         allowNull: false,
-        type: Sequelize.STRING,
-        primaryKey: true
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -23,6 +22,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('AutoRoles');
+    await queryInterface.dropTable('LogChannels');
   }
 };

@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class AutoRole extends Model {
+  class LogChannel extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,18 +13,15 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  AutoRole.init({
+  LogChannel.init({
     guild: {
       type: DataTypes.STRING,
       primaryKey: true
     },
-    role: {
-      type: DataTypes.STRING,
-      primaryKey: true
-    }
+    channel: DataTypes.STRING
   }, {
-    modelName: 'AutoRole',
-    sequelize
+    sequelize,
+    modelName: 'LogChannel',
   });
-  return AutoRole;
+  return LogChannel;
 };
