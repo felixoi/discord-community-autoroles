@@ -1,9 +1,10 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const fs = require("fs");
+const path = require('path');
 const {Collection} = require("discord.js");
 
 const subcommands = new Collection();
-const commandFiles = fs.readdirSync('./commands/welcomescreenroles').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync(path.join(__dirname, '/welcomescreenroles')).filter(file => file.endsWith('.js'));
 
 const builder = new SlashCommandBuilder()
     .setName('welcome-screen-roles')
