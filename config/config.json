@@ -2,16 +2,13 @@
   "development": {
     "username": "postgres",
     "password": "localpw",
-    "database": "discord_welcome_screen_roles",
+    "database": "discord_community_autoroles",
     "host": "db",
     "dialect": "postgres",
     "operatorsAliases": 0
   },
   "production": {
-    "username": "tomkadwill",
-    "password": "password",
-    "database": "discord_welcome_screen_roles",
-    "host": "localhost",
+    "use_env_variable": "DATABASE_URL",
     "dialect": "postgres",
     "dialectOptions": {
       "ssl": {
@@ -19,7 +16,6 @@
         "rejectUnauthorized": false
       }
     },
-    "operatorsAliases": 0,
-    "use_env_variable": "DATABASE_URL"
+    "operatorsAliases": 0
   }
 }

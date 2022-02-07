@@ -1,7 +1,8 @@
 {
-  "name": "discord-welcome-screen-roles",
+  "name": "discord-community-autoroles",
   "version": "1.0.0",
-  "description": "Discord bot for adding roles after a user accepted the rules on the welcome screen of a community server",
+  "private": true,
+  "description": "Discord bot for automatically adding roles after a user accepted the rules using membership screening feature",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +12,9 @@
   "keywords": [
     "discord",
     "discord-bot",
-    "discord-welcome-screen"
+    "discord-autoroles",
+    "discord-community-autoroles",
+    "discord-membership-screening"
   ],
   "author": "felixoi (Felix Kleinekathöfer)",
   "license": "MIT",
