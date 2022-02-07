@@ -1,0 +1,40 @@
+{
+  "name": "discord-community-autoroles",
+  "description": "Discord bot for automatically adding roles after a user accepted the rules using membership screening feature.",
+  "keywords": [
+    "discord",
+    "discord-bot",
+    "discord-autoroles",
+    "discord-community-autoroles",
+    "discord-membership-screening"
+  ],
+  "repository": "https://github.com/felixoi/discord-community-autoroles",
+  "env": {
+    "DISCORD_CLIENT_ID": {
+      "description": "Discord application client id from the Discord Developer Portal"
+    },
+    "DISCORD_TOKEN": {
+      "description": "Discord bot token from the Discord Developer Portal"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 0,
+      "size": "free"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:hobby-dev"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
