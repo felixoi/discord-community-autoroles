@@ -14,7 +14,7 @@ multiple applications deployed Heroku or don't have your credit card details ver
 # Bot Setup
 
 The bot uses [slash commands](https://support.discord.com/hc/de/articles/1500000368501-Slash-Commands-FAQ) for
-configuration. These commands can only be used by users with a role which has the `MANAGE_GUILD` (Administrator)
+configuration. These commands can only be used by users with a role which has the `MANAGE_GUILD` (Manage Server)
 permission.
 
 ## Adding an auto role
