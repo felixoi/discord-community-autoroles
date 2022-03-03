@@ -10,6 +10,10 @@ module.exports = {
 
             if (roles.length > 0) {
                 newMember.roles.add(roles)
+                    .then(() => {
+                        logToChannel(newMember.guild,
+                            `Added auto roles to ${newMember}.`);
+                    })
                     .catch((err) => {
                         logToChannel(newMember.guild,
                             `Failed to add auto-roles to ${newMember}: (${err.name}) ${err.message}`);
