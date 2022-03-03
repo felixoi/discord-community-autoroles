@@ -1,32 +1,34 @@
-const db = require('../../models/index.js')
+const db = require('../../models/index.js');
 
 module.exports = {
     async getAutoRoles(guild) {
         const found = await db.AutoRole.findAll({
             attributes: ['role'],
-            where: {guild: guild.id}
+            where: { guild: guild.id },
         });
 
         const roles = [];
-        let errored = [];
-        for(let key in found) {
+        const errored = [];
+        for (const key in found) {
             try {
                 const role = await guild.roles.fetch(found[key].role);
 
-                if(role != null) {
-                    roles.push(role)
-                } else {
+                if (role != null) {
+                    roles.push(role);
+                }
+                else {
                     errored.push(found[key].role);
                 }
 
-            } catch (e) {
+            }
+            catch (e) {
                 errored.push(found[key].role);
             }
         }
 
         return {
             roles,
-            errored
-        }
-    }
-}
+            errored,
+        };
+    },
+};

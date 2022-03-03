@@ -1,20 +1,20 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const fs = require("fs");
+const fs = require('fs');
 const path = require('path');
-const {Collection} = require("discord.js");
+const { Collection } = require('discord.js');
 
 const subcommands = new Collection();
 const commandFiles = fs.readdirSync(path.join(__dirname, '/welcomescreenroles')).filter(file => file.endsWith('.js'));
 
-const name = 'welcome-screen-roles'
+const name = 'welcome-screen-roles';
 const builder = new SlashCommandBuilder()
     .setName(name)
     .setDescription('Configure Welcome Screen Roles')
-    .setDefaultPermission(false)
+    .setDefaultPermission(false);
 for (const file of commandFiles) {
     const subcommand = require(`./welcomescreenroles/${file}`);
-    subcommands.set(subcommand.name, subcommand)
-    builder.addSubcommand(subcommandBuilder => subcommand.data(subcommandBuilder))
+    subcommands.set(subcommand.name, subcommand);
+    builder.addSubcommand(subcommandBuilder => subcommand.data(subcommandBuilder));
 }
 
 
@@ -29,7 +29,8 @@ module.exports = {
 
         try {
             await command.execute(interaction);
-        } catch (error) {
+        }
+        catch (error) {
             console.error(error);
             await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
         }
