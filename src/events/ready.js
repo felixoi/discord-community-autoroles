@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { logToChannel } = require('../common/log-channel');
 
 const commands = [];
 const commandFiles = fs.readdirSync(path.join(__dirname, '../commands')).filter(file => file.endsWith('.js'));
@@ -59,6 +60,8 @@ module.exports = {
             catch (e) {
                 console.log(`Failed to update slash commands for guild ${guild.name} (${guild.id}): (${e.name}) ${e.message}`);
             }
+
+            await logToChannel(guild, 'The bot reconnected.');
         });
     },
 };

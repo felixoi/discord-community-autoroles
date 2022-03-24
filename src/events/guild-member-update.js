@@ -23,5 +23,8 @@ module.exports = {
                 await logToChannel(newMember.guild, `Failed to add following auto-roles to ${newMember} because they couldn't be found anymore: ${errored.join(',')}`);
             }
         }
+        else if (oldMember.pending === false && newMember.pending === false) {
+            await logToChannel(newMember.guild, `${newMember} broke the matrix...`);
+        }
     },
 };
